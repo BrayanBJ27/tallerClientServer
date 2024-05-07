@@ -39,7 +39,7 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    port: 8081,
+    port: 8080,
     historyApiFallback: true,
     /*proxy: {
       '/ws': {
