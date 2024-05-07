@@ -1,4 +1,4 @@
-name: Deployment webpack
+name: Deployment Pipeline
 
 on:
   push:
