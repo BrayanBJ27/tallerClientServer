@@ -43,7 +43,7 @@ module.exports = {
     historyApiFallback: true,
     proxy: {
       '/ws': {
-        target: 'wss://login-app-yii9a.ondigitalocean.app:8080/ws',
+        target: 'wss://login-app-yii9a.ondigitalocean.app:8080',
         ws: true,
         //secure: false, // Si no estás usando SSL en tu servidor WebSocket
       },
