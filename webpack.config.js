@@ -41,13 +41,13 @@ module.exports = {
     hot: true,
     port: 8081,
     historyApiFallback: true,
-    /**proxy: {
+    proxy: {
       '/ws': {
-        target: 'wss://login-app-yii9a.ondigitalocean.app:8080',
+        target: 'wss://serverlogin-app-caxs7.ondigitalocean.app',
         ws: true,
         //secure: false, // Si no estás usando SSL en tu servidor WebSocket
       },
-    },*/
+    },
   },
   plugins: [
     new HtmlWebPackPlugin({
