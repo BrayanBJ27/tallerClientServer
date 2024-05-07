@@ -2,32 +2,50 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
+  entry: "./src/index.jsx",
+  optimization: {
+    minimize: false,
+  },
   output: {
-    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+        {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: {
+              loader: "babel-loader",
+            },
           },
-        },
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
+          {
+            test: /\.html$/,
+            use: [
+              {
+                loader: "html-loader",
+              },
+            ],
+          },
+          {
+            test: /\.css$/,
+            loaders: ['style-loader', 'css-loader'],
+          }
     ],
   },
-  devServer: {
-    hot: true,
-    port: 8080,
-    open: true,
+  resolve: {
+    extensions: ["*", ".js", ".jsx"],
   },
+  devServer: {
+    //hot: true,  // Enable hot module replacement
+    //port: 8080,  // Specify the port for the development server (default: 8080)
+    historyApiFallback: true,  // Enable history API fallback for routing
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./public/index.html",
+      filename: "./index.html",
+    }),
+  ],
 };
