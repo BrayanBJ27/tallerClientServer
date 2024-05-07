@@ -38,8 +38,8 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"],
   },
   devServer: {
-    //hot: true,
-    //port: 8081,
+    hot: true,
+    port: 8081,
     historyApiFallback: true,
     /*proxy: {
       '/ws': {
