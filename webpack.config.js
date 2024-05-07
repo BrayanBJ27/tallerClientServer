@@ -38,8 +38,8 @@ module.exports = {
     extensions: ["*", ".js", ".jsx"],
   },
   devServer: {
-    //hot: true,  // Enable hot module replacement
-    //port: 8080,  // Specify the port for the development server (default: 8080)
+    hot: true,  // Enable hot module replacement
+    port: 8080,  // Specify the port for the development server (default: 8080)
     historyApiFallback: true,  // Enable history API fallback for routing
   },
   plugins: [
