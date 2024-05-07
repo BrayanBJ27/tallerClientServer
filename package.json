@@ -19,7 +19,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --open --mode development",
-    "start": "concurrently \"npm run client\" \"npm run server\" --openssl-legacy-provider",
+    "start": "concurrently \"npm run server\" \"npm run client\" --openssl-legacy-provider",
     "server": "nodemon server.js",
     "client": "react-scripts start",
     "build": "react-scripts build webpack --mode production --openssl-legacy-provider",
