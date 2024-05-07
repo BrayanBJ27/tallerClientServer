@@ -41,13 +41,13 @@ module.exports = {
     hot: true,
     port: 8080,
     historyApiFallback: true,
-    /*proxy: {
+    proxy: {
       '/ws': {
-        target: 'wss://monkfish-app-hcvol.ondigitalocean.app:8081',
+        target: 'wss://login-app-yii9a.ondigitalocean.app:8080/ws',
         ws: true,
-        secure: false, // Si no estás usando SSL en tu servidor WebSocket
+        //secure: false, // Si no estás usando SSL en tu servidor WebSocket
       },
-    },*/
+    },
   },
   plugins: [
     new HtmlWebPackPlugin({
